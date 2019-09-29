@@ -3,4 +3,4 @@
 これは、PHPでMinecraft UUIDを暗号化、再読化できるスクリプトです。
 何に使えるのかは謎。
 
-This script is encrypt Minecraft UUID on PHP. No idea to use anything.
+This script is encrypt and decrypt Minecraft UUID on PHP. No idea to use anything.
