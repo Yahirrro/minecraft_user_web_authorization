@@ -44,7 +44,7 @@ header.top {
       margin-bottom: 0;
     }
     h1 {
-      font-size: 600;
+      font-weight: 600;
       svg {
         margin-right: 30px;
       }
@@ -67,8 +67,8 @@ header.top {
 
 main {
   .container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   h2#output {
     height: 50px;
@@ -80,6 +80,32 @@ main {
     }
     small {
       font-size: 1rem;
+    }
+  }
+  code#uuid_token{
+    word-break: break-all;
+  }
+
+
+  .form-control {
+    padding: 10px;
+    border-radius: 0;
+    .btn {
+      border-radius: 0 !important;
+    }
+  }
+}
+article {
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  h3 {
+    font-size: 1rem;
+    span {
+      font-size: 3rem;
+      opacity: 0.5;
+      padding-right: 10px;
     }
   }
 }

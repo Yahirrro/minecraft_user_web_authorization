@@ -1,0 +1,79 @@
+body {
+  font-family: "Segoe UI",Roboto,"Helvetica Neue",'Noto Sans JP',-apple-system,BlinkMacSystemFont,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; }
+
+header.top {
+  background-color: #006233;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  z-index: -2; }
+  header.top .g_logo {
+    position: absolute;
+    top: 0; }
+    header.top .g_logo #logo {
+      width: 64px;
+      border-radius: 50%;
+      padding: 5px; }
+    header.top .g_logo h1 {
+      display: inline-block;
+      margin-bottom: 0;
+      color: white;
+      font-size: 1rem;
+      margin-left: 10px; }
+    header.top .g_logo h1:before {
+      content: '/';
+      padding-right: 10px; }
+  header.top .container.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    color: white;
+    z-index: 1; }
+    header.top .container.title h1, header.top .container.title p {
+      margin-bottom: 0; }
+    header.top .container.title h1 {
+      font-weight: 600; }
+      header.top .container.title h1 svg {
+        margin-right: 30px; }
+    header.top .container.title p {
+      margin-top: 20px; }
+  header.top .user {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 500px;
+    z-index: -1; }
+
+main .container {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+main h2#output {
+  height: 50px;
+  margin-bottom: 50px; }
+  main h2#output img {
+    height: 50px;
+    margin-right: 20px; }
+  main h2#output small {
+    font-size: 1rem; }
+main code#uuid_token {
+  word-break: break-all; }
+main .form-control {
+  padding: 10px;
+  border-radius: 0; }
+  main .form-control .btn {
+    border-radius: 0 !important; }
+
+article .container {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+article h3 {
+  font-size: 1rem; }
+  article h3 span {
+    font-size: 3rem;
+    opacity: 0.5;
+    padding-right: 10px; }
+
+/*# sourceMappingURL=design.css.map */

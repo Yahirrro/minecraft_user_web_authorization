@@ -4,29 +4,21 @@ header('Content-Type: text/html; charset=UTF-8');
 ini_set('display_errors', "On");
 
 include 'encryption_key.php';
-
-if(! empty($_GET['username'])){
-    $username = $_GET['username'];
-    function username_to_profile($username) {
-        $json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . $username);
-        if (!empty($json)) {
-            $data = json_decode($json, true);
-            if (is_array($data) and !empty($data)) {
-                return $data;
-            }
-        }
-    }
-    $profile = username_to_profile($username);
-    if (is_array($profile) and isset($profile['id'])) {
-        $uuid = $profile['id'];
-    }
-} else {
-    $username = '';
-}
 if(! empty($_GET['uuid'])){
     $uuid = $_GET['uuid'];
 } else {
     $uuid = '';
+}
+if(! empty($_GET['username'])){
+    $username = $_GET['username'];
+    $json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . $username);
+    $json = mb_convert_encoding($json, 'UTF-8', 'ASCII, JIS, UTF-8, eucJP-win, SJIS-win');
+    $obj = json_decode($json);
+    if (!empty($obj)) {
+        $uuid = $obj->id;
+    }
+} else {
+    $username = '';
 }
 if(! empty($_GET['json'])){
     $json = $_GET['json'];
@@ -66,12 +58,10 @@ if($json === 'true') {
 }
 else {
     if($gtoken === $encrypt['token']) {
-        if ($uuid&&$username) {
+        if ($uuid || $username) {
             echo bin2hex(openssl_encrypt($uuid, 'AES-128-ECB', $encrypt['key']));
         }
         else {
-            echo $username;
-            echo $uuid;
             echo 'Usernameが指定されていません';
         }
     }
