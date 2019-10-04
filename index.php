@@ -80,7 +80,7 @@ include 'encryption_key.php';
     $("#submit").click(function () {
         let user = $("#Username").val();
         $.getJSON('https://portal.morino.party/token_issuance.php',
-            {json: 'true',token: 'sPlrkI*VzxoLEiSL',username: user},
+            {json: 'true',token: '<?= $encrypt['token'] ?>',username: user},
             function (data){
                 var command = '/auth ' + data.uuid_token;
                 $("#uuid_token").text(command);
