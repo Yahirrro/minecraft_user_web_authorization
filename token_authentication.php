@@ -32,7 +32,6 @@ if($json === 'true') {
         }
         $mysqli->set_charset('utf8mb4');
         $sql = 'SELECT * FROM `luckperms_players` WHERE `uuid` = \''.$arr['uuid'].'\' ORDER BY `primary_group`;';
-
         $res = $mysqli->query($sql);
         if( $res ) {
             foreach ($res as $key) {
@@ -40,6 +39,10 @@ if($json === 'true') {
                 $arr['primary_group'] = $key['primary_group'];
             }
         }
+        $sql = 'SELECT * FROM `luckperms_players` WHERE `uuid` = \''.$arr['uuid'].'\' ORDER BY `primary_group`;';
+        $res = $mysqli->query($sql);
+
+
         print json_encode($arr, JSON_PRETTY_PRINT);
     }
     else {
